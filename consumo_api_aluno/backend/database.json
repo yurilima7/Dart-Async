@@ -76,7 +76,6 @@
         {
             "id": 1,
             "nome": "Santos de Lima",
-            "idade": 22,
             "nomeCursos": [
                 "Academia do Flutter"
             ],
