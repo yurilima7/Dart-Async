@@ -10,7 +10,7 @@ class Telefone {
   });
 
   // passo 1 - serialização
-  // toMap(): Pega o objeto (Telefone) e transforma em um Objeto MapMap<String, dynamic>
+  // toMap(): Pega o objeto (Telefone) e transforma em um Objeto Map<String, dynamic>
   Map<String, dynamic> toMap() {
     return {
       'ddd': ddd,
@@ -26,15 +26,13 @@ class Telefone {
   // transformando o mapa de chave e valor em um telefone
   factory Telefone.fromMap(Map<String, dynamic> map) {
     return Telefone(
-      ddd: map['ddd'],
-      telefone: map['telefone'],
+      ddd: map['ddd'] ?? 0,
+      telefone: map['telefone'] ?? '',
     );
   }
 
   // passo 1 - deserialização
   // recebendo String e transformando em um map de chave e valor
-  factory Telefone.fromJson(String json) {
-    final jsonMap = jsonDecode(json);
-    return Telefone.fromMap(jsonMap);
-  }
+  factory Telefone.fromJson(String json) => Telefone.fromMap(jsonDecode(json));
+
 }
